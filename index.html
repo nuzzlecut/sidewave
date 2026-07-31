@@ -974,6 +974,7 @@
                       <iframe
                         class="bandcampFrame"
                         src="https://bandcamp.com/EmbeddedPlayer/album=4010130473/size=small/bgcol=000000/linkcol=0f91ff/transparent=true/"
+                        data-base-src="https://bandcamp.com/EmbeddedPlayer/album=4010130473/size=small/bgcol=000000/linkcol=0f91ff/transparent=true/"
                         seamless>
                       </iframe>
                     </div>
@@ -1309,11 +1310,40 @@
 
     function stopBandcampAll(exceptIframe = null) {
       document.querySelectorAll("iframe.bandcampFrame").forEach((frame) => {
-        if (exceptIframe && frame === exceptIframe) return;
-        try {
-          frame.setAttribute("src", "about:blank"); // hard stop
-        } catch (_) {}
+        if (frame === exceptIframe) return;
+
+        const originalSrc =
+          frame.dataset.baseSrc ||
+          frame.getAttribute("src");
+
+        if (!originalSrc || originalSrc === "about:blank") return;
+
+        frame.dataset.baseSrc = originalSrc;
+
+        // Destroy the other player to stop its audio.
+        frame.setAttribute("src", "about:blank");
+
+        // Restore it shortly afterward so it can be used again.
+        setTimeout(() => {
+          frame.setAttribute("src", originalSrc);
+        }, 150);
       });
+    }
+
+    // Bandcamp clicks happen inside cross-origin iframes,
+    // so detect which iframe received focus when the parent window blurs.
+    window.addEventListener("blur", () => {
+      setTimeout(() => {
+        const focusedFrame = document.activeElement;
+
+        if (
+          focusedFrame &&
+          focusedFrame.matches("iframe.bandcampFrame")
+        ) {
+          stopAllMedia({ exceptBandcamp: focusedFrame });
+        }
+      }, 0);
+    });
     }
 
     function stopSurfaceVideo() {
@@ -1342,20 +1372,7 @@
     // Key behavior:
     // If user interacts with ANY Bandcamp iframe, hard-stop all the others first.
     // No extra click required: pointerdown on an iframe targets the iframe element in the parent document.
-    document.addEventListener("pointerdown", (e) => {
-      const t = e.target;
-      if (t && t.matches && t.matches("iframe.bandcampFrame")) {
-        stopAllMedia({ exceptBandcamp: t });
-      }
-    }, { capture: true });
 
-    // Also handle keyboard navigation (tabbing into the iframe)
-    document.addEventListener("focusin", (e) => {
-      const t = e.target;
-      if (t && t.matches && t.matches("iframe.bandcampFrame")) {
-        stopAllMedia({ exceptBandcamp: t });
-      }
-    });
 
     function scrollToIndex(index) {
       const target = slides[index];
