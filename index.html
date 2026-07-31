@@ -1,0 +1,1542 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta 
+  name="description"
+  content="Sidewave returns with Dispel, the third full-length album. Coming in 2026."
+/>
+<title>Sidewave — Dispel Coming 2026</title>
+
+  <style>
+    :root{
+      --bg0:#070812;
+      --bg1:#0a1230;
+      --bg2:#2a0e2f;
+
+      --text:#f3f5ff;
+      --muted: rgba(243,245,255,.72);
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.10);
+      --stroke: rgba(255,255,255,.12);
+
+      --focus: rgba(155, 195, 255, .55);
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+
+      /* Per-album hero “tile” glow vars (overridden per slide) */
+      --heroGlow1: rgba(255,255,255,.10);
+      --heroGlow2: rgba(255,255,255,.06);
+
+      /* Per-album hero “tile” wash vars (overridden per slide) */
+      --tileGlowA: rgba(255,255,255,.10);
+      --tileGlowB: rgba(255,255,255,.06);
+
+      --max: 1080px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background:
+        radial-gradient(1100px 620px at 70% 78%, rgba(234, 237, 162, .14) 0%, rgba(0,0,0,0) 55%),
+        radial-gradient(1000px 560px at 58% 86%, rgba(222, 160, 102, .12) 0%, rgba(0,0,0,0) 60%),
+        radial-gradient(900px 520px at 82% 72%, rgba(120, 180, 134, .10) 0%, rgba(0,0,0,0) 62%),
+        linear-gradient(135deg, #04040a 0%, #05050c 55%, #060610 100%);
+      background-attachment: fixed;
+      line-height:1.45;
+    }
+
+    a{ color: inherit; }
+    a:focus-visible, button:focus-visible{
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+      border-radius: 12px;
+    }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 56px;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    /* ===========================
+       Album-specific tile glows
+       =========================== */
+    .carouselSlide:nth-child(1){
+      --tileGlowA: rgba(234, 237, 162, .14);
+      --tileGlowB: rgba(222, 160, 102, .12);
+      --heroGlow1: rgba(120, 180, 134, .12);
+      --heroGlow2: rgba(222, 160, 102, .10);
+    }
+    .carouselSlide:nth-child(2){
+      --tileGlowA: rgba(155, 89, 255, .14);
+      --tileGlowB: rgba(255, 92, 168, .12);
+      --heroGlow1: rgba(54, 196, 210, .12);
+      --heroGlow2: rgba(155, 89, 255, .10);
+    }
+    .carouselSlide:nth-child(3){
+      --tileGlowA: rgba(26, 92, 170, .22);
+      --tileGlowB: rgba(255, 126, 66, .20);
+      --heroGlow1: rgba(255, 126, 66, .22);
+      --heroGlow2: rgba(26, 92, 170, .18);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      text-decoration:none;
+    }
+    .brandLogo{
+      display:block;
+      height: 36px;
+      width: auto;
+      max-width: min(520px, 70vw);
+      object-fit: contain;
+      filter: drop-shadow(0 16px 34px rgba(0,0,0,.45));
+    }
+
+    /* Main card */
+    .hero{
+      display:grid;
+      grid-template-columns: 420px 1fr;
+      gap: 22px;
+      padding: 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--stroke);
+      background:
+        radial-gradient(920px 420px at 22% 18%, var(--tileGlowA), transparent 62%),
+        radial-gradient(920px 420px at 78% 22%, var(--tileGlowB), transparent 64%),
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(600px 220px at 22% 0%, var(--heroGlow1), transparent 60%),
+        radial-gradient(600px 220px at 78% 0%, var(--heroGlow2), transparent 60%);
+      pointer-events:none;
+      filter: blur(2px);
+      opacity:.95;
+    }
+
+    .hero{
+  align-items: stretch; /* ensures both columns share the same row height */
+}
+/* Add space between artwork and Credits bar */
+.leftCol .cover{
+  margin-bottom: 12px; /* try 10–14px */
+}
+
+/* Keep Credits pinned to bottom */
+.leftCol .credits{
+  margin-top: auto;
+}
+    .cover{
+      border-radius: 16px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.25);
+      box-shadow: 0 16px 40px rgba(0,0,0,.35);
+      align-self:start;
+      position: relative;
+    }
+    .cover img{
+      width:100%;
+      height:auto;
+      display:block;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    /* Dispel: always-visible play badge (bottom-left), same 12px margin */
+    .cover .playOverlay{
+      position:absolute;
+      inset:0;
+      display:grid;
+      place-items:end start;
+      padding: 12px; /* matches your general spacing */
+      opacity: 0;
+      transition: opacity .14s ease, transform .14s ease;
+      background: radial-gradient(450px 220px at 35% 70%, rgba(0,0,0,.35), rgba(0,0,0,0) 65%);
+      pointer-events:none;
+    }
+    .cover .playBadge{
+      width: 56px;
+      height: 56px;
+      border-radius: 999px;
+      display:grid;
+      place-items:center;
+      border: 1px solid rgba(255,255,255,.20);
+      background: rgba(0,0,0,.25);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 48px rgba(0,0,0,.35);
+      transform: translateY(0) scale(.98);
+      transition: transform .14s ease;
+      color: rgba(255,255,255,.92);
+      font-size: 22px;
+      line-height: 1;
+    }
+    .cover.isPlayable .playOverlay{ opacity: 1; }              /* visible by default */
+    .cover.isPlayable:hover .playBadge{ transform: scale(1); } /* subtle hover */
+    .coverLink:focus-visible .playBadge{ transform: scale(1); }
+
+    .coverLink{
+      display:block;
+      color:inherit;
+      text-decoration:none;
+      border-radius: 16px;
+      overflow:hidden;
+    }
+
+    .heroContent{
+      padding: 6px 4px;
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .titleRow{
+      display:flex;
+      align-items:baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    h1{
+      margin: 0;
+      font-size: clamp(28px, 3.6vw, 44px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .yearPill{
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+      color: rgba(255,255,255,.84);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+
+    .sub{
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 62ch;
+    }
+
+    /* Bottom-anchored stack inside the right column */
+    .panelBottom{
+      margin-top: auto; /* anchors to bottom */
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* Mini Bandcamp player styling */
+    .bandcampMini{
+  width: 100%;
+  height: 42px;
+  min-height: 42px;
+
+  /* EXACT match to .btn */
+  background: rgba(0,0,0,.18);          /* ← your 18–19% alpha */
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
+
+  overflow: hidden;
+  position: relative;
+
+  transition:
+    background .14s ease,
+    border-color .14s ease,
+    transform .14s ease;
+}
+
+.bandcampMini:hover{
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.18);
+  transform: translateY(-1px);
+}
+
+.bandcampMini iframe{
+  width: 100%;
+  height: 42px;
+  border: 0;
+  display: block;
+  background: transparent; /* critical */
+}
+
+    .bandcampMini::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius: inherit;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.06),
+        inset 0 -1px 0 rgba(0,0,0,.35);
+      pointer-events:none;
+    }
+
+
+    .bandcampMini.isPlaceholder{
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .ctaGrid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    /* Make Pines CTA span both columns on desktop grids */
+    .btnWide{
+      grid-column: 1 / -1;
+    }
+
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: rgba(0,0,0,.18);
+      text-decoration:none;
+      transition: transform .14s ease, background .14s ease, border-color .14s ease;
+      min-width: 0;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.18);
+    }
+    .btn strong{
+      font-size: 14px;
+      letter-spacing:.01em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .btn span{
+      color: var(--muted);
+      font-size: 12px;
+      white-space:nowrap;
+      opacity:.95;
+    }
+    .btn .meta{
+      display:flex;
+      flex-direction:column;
+      gap: 2px;
+      min-width:0;
+    }
+    .btn .arrow{
+      flex: 0 0 auto;
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display:grid;
+      place-items:center;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      color: rgba(255,255,255,.86);
+    }
+
+    .btn .left{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 0;
+    }
+    .streamIcon {
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
+      display: block;
+      opacity: 1;
+    }
+    .textIcon{
+      width: 22px;
+      height: 22px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      color: rgba(255,255,255,.92);
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    /* Carousel */
+    .carousel{ position:relative; }
+    .carouselTrack{
+      display:flex;
+      gap: 18px;
+      overflow-x:auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 36px;
+      margin: 0 -36px;
+      scrollbar-width: none;
+    }
+    .carouselTrack::-webkit-scrollbar{ display:none; }
+    .carouselSlide{
+      scroll-snap-align: center;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    @media (min-width: 920px){
+      .carouselSlide{ flex: 0 0 92%; }
+    }
+    .slideInner{
+      transform: scale(.985);
+      transition: transform .18s ease, opacity .18s ease;
+      opacity: .92;
+    }
+    .carouselSlide.isActive .slideInner{
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .pagination{
+      display:flex;
+      justify-content:center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .dotBtn{
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.24);
+      background: rgba(255,255,255,.12);
+      padding: 0;
+      cursor: pointer;
+      transition: transform .14s ease, background .14s ease, border-color .14s ease;
+    }
+    .dotBtn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.18);
+      border-color: rgba(255,255,255,.32);
+    }
+    .dotBtn[aria-current="true"]{
+      background: rgba(255,255,255,.78);
+      border-color: rgba(255,255,255,.78);
+    }
+
+    /* Bio + section */
+    .section{
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--stroke);
+      background: rgba(0,0,0,.16);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 12px 36px rgba(0,0,0,.25);
+    }
+    .section h2{
+      margin: 0 0 10px;
+      font-size: 16px;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.92);
+    }
+    .bio{
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 14px;
+      align-items:start;
+    }
+    .portrait{
+      border-radius: 16px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.25);
+      aspect-ratio: 1 / 1;
+    }
+    .portrait img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+    }
+    .bio p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 75ch;
+    }
+
+    /* Collapsible credits (below album art) */
+.credits{
+  margin-top: 0px;
+  border-radius: 14px;
+  border: 1px solid var(--stroke);
+  background: rgba(0,0,0,.18); /* matches CTA vibe */
+  overflow: hidden;
+}
+
+.credits summary{
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: rgba(255,255,255,.92);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: .01em;
+}
+
+/* Make left album column match right column behavior */
+.leftCol{
+  display:flex;
+  flex-direction:column;
+  padding: 6px 4px;   /* matches .heroContent padding */
+  min-width: 0;
+}
+
+/* IMPORTANT: let auto-margin handle spacing; don’t also add fixed margin-top */
+.leftCol .credits{
+  margin-top: auto;
+}
+
+    .credits summary::-webkit-details-marker{ display:none; }
+
+    .credits summary:focus-visible{
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+      border-radius: 12px;
+    }
+
+    .credits .chev{
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      color: rgba(255,255,255,.86);
+      flex: 0 0 auto;
+      transition: transform .14s ease;
+    }
+
+    .credits[open] .chev{
+      transform: rotate(180deg);
+    }
+
+    .creditsBody{
+      padding: 10px 12px 12px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .creditsBody .metaLine{
+      margin: 0 0 10px;
+      color: rgba(243,245,255,.68);
+    }
+
+    .creditsList{
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 6px;
+    }
+
+    .creditsRow{
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .creditsName{
+      color: rgba(255,255,255,.92);
+      font-weight: 650;
+      min-width: 0;
+    }
+
+    .creditsRole{
+      color: rgba(243,245,255,.68);
+      white-space: nowrap;
+    }
+
+    .creditsTail{
+      margin-top: 10px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .creditsTail div{
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .linkRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border: 1px solid var(--stroke);
+      background: rgba(0,0,0,.18);
+      backdrop-filter: blur(10px);
+      border-radius: 999px;
+      text-decoration:none;
+      color: var(--muted);
+      font-weight: 650;
+      font-size: 13px;
+      transition: transform .14s ease, background .14s ease, border-color .14s ease;
+      cursor: pointer;
+    }
+    .pill:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.18);
+      color: rgba(255,255,255,.92);
+    }
+
+    .fine{
+      margin-top: 18px;
+      color: rgba(243,245,255,.55);
+      font-size: 12px;
+      text-align:center;
+    }
+
+    /* Lightbox modal base */
+    .modal{
+      position: fixed;
+      inset: 0;
+      display:none;
+      z-index: 999;
+    }
+    .modal.isOpen{ display:block; }
+    .modalBackdrop{
+      position:absolute;
+      inset:0;
+      background: rgba(0,0,0,.70);
+      backdrop-filter: blur(10px);
+    }
+
+    .modalPanel{
+      position: fixed;
+      inset: 0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 18px;
+    }
+
+    .modalCard{
+      --availH: calc(100vh - 36px);
+      --availHd: calc(100dvh - 36px);
+      --chrome: 72px;
+
+      width: min(
+        520px,
+        92vw,
+        calc((var(--availH) - var(--chrome)) * 9 / 16),
+        calc((var(--availHd) - var(--chrome)) * 9 / 16)
+      );
+
+      max-height: var(--availH);
+      max-height: var(--availHd);
+
+      display:flex;
+      flex-direction:column;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+      box-shadow: 0 22px 70px rgba(0,0,0,.55);
+      overflow:hidden;
+    }
+
+    .modalTop{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      padding: 12px 12px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .modalTitle{
+      min-width:0;
+      display:flex;
+      flex-direction:column;
+      gap: 2px;
+    }
+    .modalTitle strong{
+      font-size: 14px;
+      letter-spacing:.01em;
+    }
+    .modalTitle span{
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .closeBtn{
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      display:grid;
+      place-items:center;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.20);
+      color: rgba(255,255,255,.92);
+      cursor:pointer;
+      transition: transform .14s ease, background .14s ease, border-color .14s ease;
+      flex: 0 0 auto;
+    }
+    .closeBtn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.20);
+    }
+    .modalBody{
+      padding: 12px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modalVideo{
+      width: 100%;
+      max-height: 100%;
+      aspect-ratio: 9 / 16;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.30);
+    }
+    .modalVideo.pinesVideo{
+      aspect-ratio: 16 / 9;
+    }
+    .modalVideo video{
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+    .modalVideo iframe{
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero{ grid-template-columns: 340px 1fr; }
+    }
+    @media (max-width: 760px){
+      header{ flex-direction:column; align-items:flex-start; }
+      .hero{ grid-template-columns: 1fr; }
+      .cover{ max-width: 520px; }
+      .ctaGrid{ grid-template-columns: 1fr; }
+      .bio{ grid-template-columns: 1fr; }
+      .portrait{ max-width: 240px; }
+      .carouselTrack{
+        padding: 0 18px;
+        margin: 0 -18px;
+      }
+      .carouselSlide{ flex: 0 0 100%; }
+      .brandLogo{
+        height: 32px;
+        max-width: 82vw;
+      }
+      .modalCard{
+        width: min(420px, 94vw);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="sr" href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
+
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#" aria-label="Sidewave home">
+        <img class="brandLogo" src="https://raw.githubusercontent.com/nuzzlecut/sidewave/main/header.png" alt="Sidewave" loading="eager" />
+      </a>
+    </header>
+
+    <main id="main">
+      <section class="carousel" aria-label="Albums">
+        <div class="carouselTrack" id="carouselTrack">
+          <!-- Slide 1 (Dispel - playable cover opens lightbox) -->
+          <div class="carouselSlide isActive" data-index="0">
+            <div class="slideInner">
+              <section class="hero" aria-label="Dispel album">
+                <div class="cover isPlayable">
+                  <a class="coverLink" href="#" id="openSurfaceReel" aria-label="Play The Surface promo reel">
+                    <img src="https://raw.githubusercontent.com/nuzzlecut/sidewave/main/dispel_album.png" alt="Dispel album artwork" loading="eager" />
+                    <div class="playOverlay" aria-hidden="true">
+                      <div class="playBadge">▶</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="heroContent">
+                  <div class="titleRow">
+                    <h1>Dispel</h1>
+                    <span class="yearPill">2026</span>
+                  </div>
+
+                  <p class="sub">
+                    The third full-length album from Sidewave, arriving in 2026.
+                    Dispel is built on thick, fuzz-driven guitars, a powerful rhythm
+                    section, and soaring melodies that feel both massive and weightless.
+                    Nine songs, six years in the making.
+                  </p>
+
+                  <div class="panelBottom">
+                    <div class="bandcampMini isPlaceholder" aria-hidden="true"></div>
+
+                    <div class="ctaGrid" aria-label="Dispel links">
+                      <a
+                        class="btn"
+                        href="#"
+                        id="openSurfaceReelButton"
+                        aria-label="Watch a preview of The Surface"
+                      >
+                        <div class="left">
+                          <img
+                            class="streamIcon"
+                            src="https://raw.githubusercontent.com/nuzzlecut/sidewave/main/icon_yt.svg"
+                            alt=""
+                            aria-hidden="true"
+                          />
+                          <div class="meta">
+                            <strong>Watch Preview</strong>
+                            <span>The Surface</span>
+                          </div>
+                        </div>
+                        <div class="arrow" aria-hidden="true">▶</div>
+                      </a>
+
+                      <a
+                        class="btn"
+                        href="YOUR_MAILING_LIST_URL"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <div class="left">
+                          <div class="textIcon" aria-hidden="true">✉</div>
+                          <div class="meta">
+                            <strong>Join the Mailing List</strong>
+                            <span>Hear what comes next</span>
+                          </div>
+                        </div>
+                        <div class="arrow" aria-hidden="true">↗</div>
+                      </a>
+
+                      <a
+                        class="btn"
+                        href="YOUR_SPOTIFY_ARTIST_URL"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <div class="left">
+                          <img
+                            class="streamIcon"
+                            src="https://raw.githubusercontent.com/nuzzlecut/sidewave/main/icon_spotify.svg"
+                            alt=""
+                            aria-hidden="true"
+                          />
+                          <div class="meta">
+                            <strong>Follow on Spotify</strong>
+                            <span>New music in 2026</span>
+                          </div>
+                        </div>
+                        <div class="arrow" aria-hidden="true">↗</div>
+                      </a>
+
+                      <a
+                        class="btn"
+                        href="YOUR_INSTAGRAM_URL"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <div class="left">
+                          <div class="textIcon" aria-hidden="true">◎</div>
+                          <div class="meta">
+                            <strong>Instagram</strong>
+                            <span>Follow the release</span>
+                          </div>
+                        </div>
+                        <div class="arrow" aria-hidden="true">↗</div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <!-- Slide 2 (Ultraviolet) -->
+          <div class="carouselSlide" data-index="1">
+            <div class="slideInner">
+              <section class="hero" aria-label="Ultraviolet album">
+                <div>
+                  <div class="leftCol">
+                    <div class="cover">
+                      <img
+                        src="https://raw.githubusercontent.com/nuzzlecut/sidewave/main/ultraviolet_album.jpg"
+                        alt="Ultraviolet album artwork"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    <details class="credits">
+                      <summary aria-label="Show credits for Ultraviolet">
+                        <span>Credits</span>
+                        <span class="chev" aria-hidden="true">⌄</span>
+                      </summary>
+
+                      <div class="creditsBody">
+                        <p class="metaLine">Released April 29, 2019</p>
+
+                        <div class="creditsTail">
+                          <div>
+                              Written, Recorded, Mixed, All instruments: 
+                            <strong style="color:rgba(255,255,255,.92);">
+                            Phil Golyshko
+                            </strong>
+                          
+                          </div>
+
+                          <div>
+                           
+                              Mastered: 
+                          
+                             <strong style="color:rgba(255,255,255,.92);">
+                            Dereck Blackburn at Quiethouse Recording
+                            </strong>
+                          </div>
+                        </div>
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <div class="heroContent">
+                  <div class="titleRow">
+                    <h1>Ultraviolet</h1>
+                    <span class="yearPill">2019</span>
+                  </div>
+
+                  <p class="sub">
+                    Ultraviolet builds thick, textured layers of guitar and effects, with a strong rhythmic drive underneath expansive, atmospheric melodies.
+                  </p>
+
+                  <div class="panelBottom">
+                    <div class="bandcampMini" aria-label="Ultraviolet Bandcamp player">
+                      <iframe
+                        class="bandcampFrame"
+                        src="https://bandcamp.com/EmbeddedPlayer/album=4010130473/size=small/bgcol=000000/linkcol=0f91ff/transparent=true/"
+                        seamless>
+                      </iframe>
+                    </div>
+                
+
+                    <div class="ctaGrid" aria-label="Where to listen">
+                      <a class="btn" href="https://open.spotify.com/album/4funfUERnjhPealEo0QIIU?si=SAjnBLwZRF6GairzLKY-Yg" target="_blank" rel="noopener">
+                        <div class="left">
+                          <img class="streamIcon" src="https://raw.githubusercontent.com/nuzzlecut/sidewave/main/icon_spotify.svg" alt="" aria-hidden="true" />
+                          <div class="meta">
+                            <strong>Spotify</strong>
+                            <span>Stream</span>
+                          </div>
+                        </div>
+                        <div class="arrow" aria-hidden="true">↗</div>
+                      </a>
+
+                      <a class="btn" href="#" target="_blank" rel="noopener">
+                        <div class="left">
+                          <img class="streamIcon" src="https://raw.githubusercontent.com/nuzzlecut/sidewave/main/icon_apple.svg" alt="" aria-hidden="true" />
+                          <div class="meta">
+                            <strong>Apple Music</strong>
+                            <span>Stream</span>
+                          </div>
+                        </div>
+                        <div class="arrow" aria-hidden="true">↗</div>
+                      </a>
+
+                      <a class="btn" href="#" target="_blank" rel="noopener">
+                        <div class="left">
+                          <img class="streamIcon" src="https://raw.githubusercontent.com/nuzzlecut/sidewave/main/icon_amazon.svg" alt="" aria-hidden="true" />
+                          <div class="meta">
+                            <strong>Amazon Music</strong>
+                            <span>Stream</span>
+                          </div>
+                        </div>
+                        <div class="arrow" aria-hidden="true">↗</div>
+                      </a>
+
+                      <a class="btn" href="#" target="_blank" rel="noopener">
+                        <div class="left">
+                          <img class="streamIcon" src="https://raw.githubusercontent.com/nuzzlecut/sidewave/main/icon_bc.svg" alt="" aria-hidden="true" />
+                          <div class="meta">
+                            <strong>Bandcamp</strong>
+                            <span>Buy / support directly</span>
+                          </div>
+                        </div>
+                        <div class="arrow" aria-hidden="true">↗</div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <!-- Slide 3 (Glass Giant) -->
+          <div class="carouselSlide" data-index="2">
+            <div class="slideInner">
+              <section class="hero" aria-label="Glass Giant album">
+                <div>
+                  <div class="leftCol">
+                    <div class="cover">
+                      <img src="https://raw.githubusercontent.com/nuzzlecut/sidewave/main/glass_giant_album.jpg"
+                          alt="Glass Giant album artwork"
+                          loading="lazy" />
+                    </div>
+
+                    <details class="credits">
+                      <summary aria-label="Show credits for Glass Giant">
+                        <span>Credits</span>
+                        <span class="chev" aria-hidden="true">⌄</span>
+                      </summary>
+
+                      <div class="creditsBody">
+                        <p class="metaLine">Released October 5, 2015</p>
+
+                        <div class="creditsList" role="list">
+                          <div class="creditsRow" role="listitem">
+                            <div class="creditsName">Phil Golyshko</div>
+                            <div class="creditsRole">Vocals / Guitar</div>
+                          </div>
+
+                          <div class="creditsRow" role="listitem">
+                            <div class="creditsName">William Collins</div>
+                            <div class="creditsRole">Guitar / Synth</div>
+                          </div>
+
+                          <div class="creditsRow" role="listitem">
+                            <div class="creditsName">Matthew Russel</div>
+                            <div class="creditsRole">Bass / Vocals</div>
+                          </div>
+
+                          <div class="creditsRow" role="listitem">
+                            <div class="creditsName">Brandon Dickert</div>
+                            <div class="creditsRole">Drums / Vocals</div>
+                          </div>
+                        </div>
+
+                        <div class="creditsTail">
+                          <div>Mixed by<strong style="color:rgba(255,255,255,.92);"> Aaron Harris</strong></div>
+                          <div>Mastered by<strong style="color:rgba(255,255,255,.92);"> Chris Common</strong></div>
+                        </div>
+                      </div>
+                    </details>
+                  </div>
+                </div>
+                <div class="heroContent">
+                  <div class="titleRow">
+                    <h1>Glass Giant</h1>
+                    <span class="yearPill">2015</span>
+                  </div>
+
+                  <p class="sub">
+                    Sidewave's debut studio release. Glass Giant blends spacious, guitar-laden shoegaze textures with melodic songwriting and a steady, rhythmic pulse.
+                  </p>
+
+                  <div class="panelBottom">
+                    <div class="bandcampMini" aria-label="Glass Giant Bandcamp player">
+  <iframe
+    class="bandcampFrame"
+    style="border: 0; width: 100%; height: 42px;"
+    src="https://bandcamp.com/EmbeddedPlayer/album=2365631711/size=small/bgcol=151515/linkcol=0f91ff/track=38735654/transparent=true/"
+    data-base-src="https://bandcamp.com/EmbeddedPlayer/album=2365631711/size=small/bgcol=151515/linkcol=0f91ff/track=38735654/transparent=true/"
+    seamless>
+    <a href="https://sidewave.net/album/glass-giant">Glass Giant by Sidewave</a>
+  </iframe>
+</div>
+                    </div>
+
+                    <div class="ctaGrid" aria-label="Where to listen">
+                      <a class="btn" href="#" target="_blank" rel="noopener">
+                        <div class="left">
+                          <img class="streamIcon" src="https://raw.githubusercontent.com/nuzzlecut/sidewave/main/icon_spotify.svg" alt="" aria-hidden="true" />
+                          <div class="meta">
+                            <strong>Spotify</strong>
+                            <span>Stream</span>
+                          </div>
+                        </div>
+                        <div class="arrow" aria-hidden="true">↗</div>
+                      </a>
+
+                      <a class="btn" href="#" target="_blank" rel="noopener">
+                        <div class="left">
+                          <img class="streamIcon" src="https://raw.githubusercontent.com/nuzzlecut/sidewave/main/icon_apple.svg" alt="" aria-hidden="true" />
+                          <div class="meta">
+                            <strong>Apple Music</strong>
+                            <span>Stream</span>
+                          </div>
+                        </div>
+                        <div class="arrow" aria-hidden="true">↗</div>
+                      </a>
+
+                      <a class="btn" href="#" target="_blank" rel="noopener">
+                        <div class="left">
+                          <img class="streamIcon" src="https://raw.githubusercontent.com/nuzzlecut/sidewave/main/icon_amazon.svg" alt="" aria-hidden="true" />
+                          <div class="meta">
+                            <strong>Amazon Music</strong>
+                            <span>Stream</span>
+                          </div>
+                        </div>
+                        <div class="arrow" aria-hidden="true">↗</div>
+                      </a>
+
+                      <a class="btn" href="#" target="_blank" rel="noopener">
+                        <div class="left">
+                          <img class="streamIcon" src="https://raw.githubusercontent.com/nuzzlecut/sidewave/main/icon_bc.svg" alt="" aria-hidden="true" />
+                          <div class="meta">
+                            <strong>Bandcamp</strong>
+                            <span>Buy / support directly</span>
+                          </div>
+                        </div>
+                        <div class="arrow" aria-hidden="true">↗</div>
+                      </a>
+
+                      <a class="btn btnWide" href="#" id="openPinesVideo" aria-label="Play Pines music video">
+                        <div class="left">
+                          <img class="streamIcon" src="https://raw.githubusercontent.com/nuzzlecut/sidewave/main/icon_yt.svg" alt="" aria-hidden="true" />
+                          <div class="meta">
+                            <strong>Pines (Music Video)</strong>
+                            <span>Watch</span>
+                          </div>
+                        </div>
+                        <div class="arrow" aria-hidden="true">▶</div>
+                      </a>
+                    </div>
+                  </div>
+                
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <div class="pagination" aria-label="Album pagination" id="pagination">
+          <button class="dotBtn" type="button" aria-label="Go to Dispel" aria-current="true" data-go="0"></button>
+          <button class="dotBtn" type="button" aria-label="Go to Ultraviolet" aria-current="false" data-go="1"></button>
+          <button class="dotBtn" type="button" aria-label="Go to Glass Giant" aria-current="false" data-go="2"></button>
+        </div>
+      </section>
+
+      <section id="bio" class="section" aria-label="Bio">
+        <h2>Bio</h2>
+        <div class="bio">
+          <div class="portrait">
+            <img src="https://raw.githubusercontent.com/nuzzlecut/sidewave/main/dispel_portrait.png" alt="Sidewave portrait" loading="lazy" />
+          </div>
+
+          <div>
+            <p>
+              Sidewave is the project of Phil Golyshko, a Colorado-based musician working in shoegaze and alternative rock. Formed in the mid-2010s, Sidewave is built around heavy, fuzz-driven guitars, big choruses, and an immersive field of sound. Over time, the project has evolved with a clear focus on melody, dynamics, and texture. The music is loud and physical, designed to feel expansive without losing impact.
+            </p>
+
+            <div class="linkRow" aria-label="Sidewave links">
+              <a
+                class="pill"
+                href="YOUR_INSTAGRAM_URL"
+                target="_blank"
+                rel="noopener"
+              >
+                Instagram
+              </a>
+
+              <a
+                class="pill"
+                href="YOUR_YOUTUBE_URL"
+                target="_blank"
+                rel="noopener"
+              >
+                YouTube
+              </a>
+
+              <a
+                class="pill"
+                href="YOUR_BANDCAMP_URL"
+                target="_blank"
+                rel="noopener"
+              >
+                Bandcamp
+              </a>
+
+              <a
+                class="pill"
+                href="mailto:YOUR_EMAIL_ADDRESS"
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="fine">
+        © <span id="y"></span> Sidewave
+      </div>
+    </main>
+  </div>
+
+  <!-- Lightbox Modal (The Surface promo reel) -->
+  <div class="modal" id="surfaceModal" role="dialog" aria-modal="true" aria-labelledby="surfaceModalTitle" aria-hidden="true">
+    <div class="modalBackdrop" data-close="1"></div>
+    <div class="modalPanel">
+      <div class="modalCard">
+        <div class="modalTop">
+          <div class="modalTitle">
+            <strong id="surfaceModalTitle">The Surface</strong>
+            <span>Promo reel · 9:16</span>
+          </div>
+          <button class="closeBtn" type="button" id="closeSurfaceModal" aria-label="Close">✕</button>
+        </div>
+        <div class="modalBody">
+          <div class="modalVideo">
+            <video
+              id="surfaceVideo"
+              src="https://raw.githubusercontent.com/nuzzlecut/sidewave/main/surface_promo.mp4"
+              playsinline
+              controls
+              preload="metadata"
+            ></video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal (Pines music video) -->
+  <div class="modal" id="pinesModal" role="dialog" aria-modal="true" aria-labelledby="pinesModalTitle" aria-hidden="true">
+    <div class="modalBackdrop" data-close="1"></div>
+    <div class="modalPanel">
+      <div class="modalCard">
+        <div class="modalTop">
+          <div class="modalTitle">
+            <strong id="pinesModalTitle">Pines</strong>
+            <span>Music video</span>
+          </div>
+          <button class="closeBtn" type="button" id="closePinesModal" aria-label="Close">✕</button>
+        </div>
+        <div class="modalBody">
+          <div class="modalVideo pinesVideo">
+            <iframe
+              id="pinesFrame"
+              src="https://www.youtube.com/embed/LcBBHKdJFQM?rel=0"
+              data-base-src="https://www.youtube.com/embed/LcBBHKdJFQM?rel=0"
+              title="Pines — Sidewave"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tiny UX nicety: current year.
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Carousel behavior
+    const track = document.getElementById("carouselTrack");
+    const slides = Array.from(track.querySelectorAll(".carouselSlide"));
+    const dots = Array.from(document.querySelectorAll(".dotBtn"));
+
+    function setActive(index) {
+      slides.forEach((s, i) => s.classList.toggle("isActive", i === index));
+      dots.forEach((d, i) => d.setAttribute("aria-current", i === index ? "true" : "false"));
+
+      const h1 = slides[index].querySelector("h1");
+      if (h1) document.title = `Sidewave — ${h1.textContent}`;
+    }
+
+    /* ===========================
+       Most-strict: never overlap
+       =========================== */
+
+    function stopBandcampAll(exceptIframe = null) {
+      document.querySelectorAll("iframe.bandcampFrame").forEach((frame) => {
+        if (exceptIframe && frame === exceptIframe) return;
+        try {
+          frame.setAttribute("src", "about:blank"); // hard stop
+        } catch (_) {}
+      });
+    }
+
+    function stopSurfaceVideo() {
+      try {
+        const v = document.getElementById("surfaceVideo");
+        if (v) v.pause();
+      } catch (_) {}
+    }
+
+    function stopPinesYouTube() {
+      try {
+        const p = document.getElementById("pinesFrame");
+        if (!p) return;
+        const base = p.getAttribute("data-base-src") || p.getAttribute("src");
+        if (base) p.setAttribute("src", base);
+      } catch (_) {}
+    }
+
+    function stopAllMedia(opts = {}) {
+      const exceptBandcamp = opts.exceptBandcamp || null;
+      stopSurfaceVideo();
+      stopPinesYouTube();
+      stopBandcampAll(exceptBandcamp);
+    }
+
+    // Key behavior:
+    // If user interacts with ANY Bandcamp iframe, hard-stop all the others first.
+    // No extra click required: pointerdown on an iframe targets the iframe element in the parent document.
+    document.addEventListener("pointerdown", (e) => {
+      const t = e.target;
+      if (t && t.matches && t.matches("iframe.bandcampFrame")) {
+        stopAllMedia({ exceptBandcamp: t });
+      }
+    }, { capture: true });
+
+    // Also handle keyboard navigation (tabbing into the iframe)
+    document.addEventListener("focusin", (e) => {
+      const t = e.target;
+      if (t && t.matches && t.matches("iframe.bandcampFrame")) {
+        stopAllMedia({ exceptBandcamp: t });
+      }
+    });
+
+    function scrollToIndex(index) {
+      const target = slides[index];
+      if (!target) return;
+      target.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      setActive(index);
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        const i = Number(dot.getAttribute("data-go"));
+        scrollToIndex(i);
+      });
+    });
+
+    let raf = 0;
+    track.addEventListener("scroll", () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const trackRect = track.getBoundingClientRect();
+        const centerX = trackRect.left + trackRect.width / 2;
+
+        let bestIdx = 0;
+        let bestDist = Infinity;
+
+        slides.forEach((slide, i) => {
+          const r = slide.getBoundingClientRect();
+          const slideCenter = r.left + r.width / 2;
+          const dist = Math.abs(slideCenter - centerX);
+          if (dist < bestDist) {
+            bestDist = dist;
+            bestIdx = i;
+          }
+        });
+
+        setActive(bestIdx);
+      });
+    }, { passive: true });
+
+    document.addEventListener("keydown", (e) => {
+      const tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : "";
+      if (tag === "input" || tag === "textarea" || tag === "select") return;
+
+      const current = dots.findIndex(d => d.getAttribute("aria-current") === "true");
+      if (e.key === "ArrowLeft") scrollToIndex(Math.max(0, current - 1));
+      if (e.key === "ArrowRight") scrollToIndex(Math.min(slides.length - 1, current + 1));
+    });
+
+    // Initialize
+    setActive(0);
+
+    /* ===========================
+       Surface modal wiring
+       =========================== */
+    const openReel = document.getElementById("openSurfaceReel");
+    const openSurfaceReelButton = document.getElementById("openSurfaceReelButton");
+    const surfaceModal = document.getElementById("surfaceModal");
+    const closeSurface = document.getElementById("closeSurfaceModal");
+    const surfaceVideo = document.getElementById("surfaceVideo");
+    let lastFocus = null;
+
+    function openSurfaceModal() {
+      stopAllMedia();
+      lastFocus = document.activeElement;
+
+      surfaceModal.classList.add("isOpen");
+      surfaceModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+
+      try {
+        surfaceVideo.currentTime = 0;
+        const p = surfaceVideo.play();
+        if (p && typeof p.catch === "function") p.catch(() => {});
+      } catch (_) {}
+
+      closeSurface.focus();
+    }
+
+    function closeSurfaceModal() {
+      surfaceModal.classList.remove("isOpen");
+      surfaceModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+
+      try { surfaceVideo.pause(); } catch (_) {}
+      if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+    }
+
+    if (openReel) {
+      openReel.addEventListener("click", (e) => {
+        e.preventDefault();
+        openSurfaceModal();
+      });
+    }
+    openSurfaceReelButton?.addEventListener("click", (event) => {
+    event.preventDefault();
+    openSurfaceModal();
+  });
+    closeSurface.addEventListener("click", closeSurfaceModal);
+    surfaceModal.addEventListener("click", (e) => {
+      const t = e.target;
+      if (t && t.dataset && t.dataset.close === "1") closeSurfaceModal();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (!surfaceModal.classList.contains("isOpen")) return;
+
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closeSurfaceModal();
+        return;
+      }
+
+      if (e.key === "Tab") {
+        const focusables = surfaceModal.querySelectorAll('button,[href],video,[tabindex]:not([tabindex="-1"])');
+        if (!focusables.length) return;
+
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    });
+
+    /* ===========================
+       Pines modal wiring
+       =========================== */
+    const openPines = document.getElementById("openPinesVideo");
+    const pinesModal = document.getElementById("pinesModal");
+    const closePines = document.getElementById("closePinesModal");
+    const pinesFrame = document.getElementById("pinesFrame");
+    const basePinesSrc = pinesFrame ? (pinesFrame.getAttribute("data-base-src") || pinesFrame.getAttribute("src")) : null;
+
+    function openPinesModal() {
+      stopAllMedia();
+
+      if (pinesFrame && basePinesSrc) {
+        const withAutoplay = basePinesSrc.includes("autoplay=1")
+          ? basePinesSrc
+          : (basePinesSrc + (basePinesSrc.includes("?") ? "&" : "?") + "autoplay=1");
+        pinesFrame.setAttribute("src", withAutoplay);
+      }
+
+      pinesModal.classList.add("isOpen");
+      pinesModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      closePines.focus();
+    }
+
+    function closePinesModalFn() {
+      pinesModal.classList.remove("isOpen");
+      pinesModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+
+      if (pinesFrame && basePinesSrc) pinesFrame.setAttribute("src", basePinesSrc);
+    }
+
+    if (openPines) {
+      openPines.addEventListener("click", (e) => {
+        e.preventDefault();
+        openPinesModal();
+      });
+    }
+    closePines.addEventListener("click", closePinesModalFn);
+    pinesModal.addEventListener("click", (e) => {
+      const t = e.target;
+      if (t && t.dataset && t.dataset.close === "1") closePinesModalFn();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (!pinesModal.classList.contains("isOpen")) return;
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closePinesModalFn();
+      }
+    });
+  </script>
+</body>
+</html>
