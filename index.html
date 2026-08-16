@@ -109,15 +109,21 @@
     }
 
     .sidewaveSignup input{
-      flex:1;
+      flex:1 1 auto;
       min-width:0;
+      width:100%;
       height:44px;
+      min-height:44px;
       padding:0 14px;
       border-radius:9px;
       border:1px solid rgba(255,255,255,.15);
       background:rgba(255,255,255,.06);
       color:#f3f5ff;
       font:inherit;
+      font-size:16px;
+      line-height:1.2;
+      -webkit-appearance:none;
+      appearance:none;
       outline:none;
       transition:border-color .14s ease, background .14s ease;
     }
@@ -161,8 +167,18 @@
         flex-direction:column;
       }
 
-      .sidewaveSignup button{
+      .sidewaveSignup input{
+        flex:0 0 44px;
         width:100%;
+        height:44px;
+        min-height:44px;
+      }
+
+      .sidewaveSignup button{
+        flex:0 0 44px;
+        width:100%;
+        height:44px;
+        min-height:44px;
       }
     }
 

@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Sidewave — music, links, and updates." />
+  <title>Sidewave — Links</title>
+
+  <style>
+    :root{
+      --text:#f3f5ff;
+      --muted:rgba(243,245,255,.70);
+      --stroke:rgba(255,255,255,.12);
+      --focus:rgba(155,195,255,.55);
+      --shadow:0 18px 60px rgba(0,0,0,.45);
+      --radius:18px;
+      --max:620px;
+    }
+
+    *{ box-sizing:border-box; }
+
+    html,body{ min-height:100%; }
+
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 68% 72%, rgba(234,237,162,.13) 0%, rgba(0,0,0,0) 55%),
+        radial-gradient(900px 600px at 58% 88%, rgba(222,160,102,.12) 0%, rgba(0,0,0,0) 60%),
+        radial-gradient(800px 520px at 82% 70%, rgba(120,180,134,.10) 0%, rgba(0,0,0,0) 62%),
+        linear-gradient(135deg,#04040a 0%,#05050c 55%,#060610 100%);
+      background-attachment:fixed;
+      line-height:1.45;
+    }
+
+    a{ color:inherit; }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible{
+      outline:3px solid var(--focus);
+      outline-offset:3px;
+    }
+
+    .wrap{
+      width:min(var(--max), calc(100% - 32px));
+      margin:0 auto;
+      padding:34px 0 42px;
+    }
+
+    .brand{
+      display:block;
+      width:max-content;
+      margin:0 auto 26px;
+      text-decoration:none;
+    }
+
+    .brandLogo{
+      display:block;
+      height:42px;
+      width:auto;
+      max-width:72vw;
+      object-fit:contain;
+      filter:drop-shadow(0 16px 34px rgba(0,0,0,.45));
+    }
+
+    .intro{
+      text-align:center;
+      margin-bottom:22px;
+    }
+
+    .intro h1{
+      margin:0 0 6px;
+      font-size:22px;
+      letter-spacing:-.02em;
+    }
+
+    .intro p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .links{
+      display:grid;
+      gap:10px;
+    }
+
+    .linkCard{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:13px 14px;
+      border-radius:14px;
+      border:1px solid var(--stroke);
+      background:
+        radial-gradient(500px 180px at 18% 0%, rgba(234,237,162,.055), transparent 60%),
+        linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));
+      box-shadow:0 12px 32px rgba(0,0,0,.20);
+      text-decoration:none;
+      transition:transform .14s ease, background .14s ease, border-color .14s ease;
+    }
+
+    .linkCard:hover{
+      transform:translateY(-1px);
+      background:rgba(255,255,255,.08);
+      border-color:rgba(255,255,255,.20);
+    }
+
+    .left{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .streamIcon{
+      width:26px;
+      height:26px;
+      flex:0 0 26px;
+      display:block;
+    }
+
+    .textIcon{
+      width:26px;
+      height:26px;
+      flex:0 0 26px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:999px;
+      font-size:16px;
+      color:rgba(255,255,255,.92);
+    }
+
+    .meta{
+      min-width:0;
+      display:flex;
+      flex-direction:column;
+      gap:1px;
+    }
+
+    .meta strong{
+      font-size:14px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .meta span{
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .arrow{
+      width:36px;
+      height:36px;
+      flex:0 0 36px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.055);
+      color:rgba(255,255,255,.86);
+    }
+
+    .mailingSection{
+      margin-top:24px;
+      padding:20px;
+      border-radius:var(--radius);
+      border:1px solid var(--stroke);
+      background:
+        radial-gradient(620px 220px at 20% 0%, rgba(120,180,134,.075), transparent 64%),
+        linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.025));
+      box-shadow:var(--shadow);
+    }
+
+    .mailingListCopy{
+      margin-bottom:13px;
+    }
+
+    .mailingListCopy strong{
+      display:block;
+      font-size:17px;
+      margin-bottom:3px;
+    }
+
+    .mailingListCopy span{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .sidewaveSignup{
+      display:flex;
+      align-items:stretch;
+      gap:10px;
+      width:100%;
+    }
+
+    .sidewaveSignup input{
+      flex:1 1 auto;
+      min-width:0;
+      width:100%;
+      height:44px;
+      min-height:44px;
+      padding:0 14px;
+      border-radius:9px;
+      border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      font:inherit;
+      font-size:16px;
+      line-height:1.2;
+      -webkit-appearance:none;
+      appearance:none;
+      outline:none;
+    }
+
+    .sidewaveSignup input::placeholder{
+      color:rgba(243,245,255,.45);
+    }
+
+    .sidewaveSignup button{
+      flex:0 0 auto;
+      height:44px;
+      min-height:44px;
+      padding:0 18px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:9px;
+      background:#f3f5ff;
+      color:#070812;
+      font:inherit;
+      font-weight:700;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+
+    .mailingNote{
+      margin:8px 0 0;
+      color:rgba(243,245,255,.38);
+      font-size:11px;
+    }
+
+    .fine{
+      margin-top:24px;
+      color:rgba(243,245,255,.45);
+      font-size:11px;
+      text-align:center;
+    }
+
+    @media(max-width:600px){
+      .wrap{
+        width:min(var(--max), calc(100% - 24px));
+        padding-top:24px;
+      }
+
+      .brandLogo{ height:36px; }
+
+      .sidewaveSignup{
+        flex-direction:column;
+      }
+
+      .sidewaveSignup input,
+      .sidewaveSignup button{
+        flex:0 0 44px;
+        width:100%;
+        height:44px;
+        min-height:44px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <a class="brand" href="/" aria-label="Sidewave home">
+      <img class="brandLogo" src="images/header.png" alt="Sidewave" />
+    </a>
+
+    <div class="intro">
+      <h1>Sidewave</h1>
+      <p>Music, releases, and updates.</p>
+    </div>
+
+    <div class="links" aria-label="Sidewave links">
+      <a class="linkCard" href="/" target="_self">
+        <div class="left">
+          <div class="textIcon" aria-hidden="true">↗</div>
+          <div class="meta">
+            <strong>Official Website</strong>
+            <span>sidewaveband.com</span>
+          </div>
+        </div>
+        <div class="arrow" aria-hidden="true">→</div>
+      </a>
+
+      <a class="linkCard" href="YOUR_SPOTIFY_ARTIST_URL" target="_blank" rel="noopener">
+        <div class="left">
+          <img class="streamIcon" src="images/icon_spotify.svg" alt="" aria-hidden="true" />
+          <div class="meta">
+            <strong>Spotify</strong>
+            <span>Listen and follow</span>
+          </div>
+        </div>
+        <div class="arrow" aria-hidden="true">↗</div>
+      </a>
+
+      <a class="linkCard" href="YOUR_APPLE_MUSIC_ARTIST_URL" target="_blank" rel="noopener">
+        <div class="left">
+          <img class="streamIcon" src="images/icon_apple.svg" alt="" aria-hidden="true" />
+          <div class="meta">
+            <strong>Apple Music</strong>
+            <span>Listen</span>
+          </div>
+        </div>
+        <div class="arrow" aria-hidden="true">↗</div>
+      </a>
+
+      <a class="linkCard" href="YOUR_BANDCAMP_URL" target="_blank" rel="noopener">
+        <div class="left">
+          <img class="streamIcon" src="images/icon_bc.svg" alt="" aria-hidden="true" />
+          <div class="meta">
+            <strong>Bandcamp</strong>
+            <span>Listen and support directly</span>
+          </div>
+        </div>
+        <div class="arrow" aria-hidden="true">↗</div>
+      </a>
+
+      <a class="linkCard" href="YOUR_YOUTUBE_URL" target="_blank" rel="noopener">
+        <div class="left">
+          <img class="streamIcon" src="images/icon_yt.svg" alt="" aria-hidden="true" />
+          <div class="meta">
+            <strong>YouTube</strong>
+            <span>Videos</span>
+          </div>
+        </div>
+        <div class="arrow" aria-hidden="true">↗</div>
+      </a>
+
+      <a class="linkCard" href="YOUR_INSTAGRAM_URL" target="_blank" rel="noopener">
+        <div class="left">
+          <div class="textIcon" aria-hidden="true">◎</div>
+          <div class="meta">
+            <strong>Instagram</strong>
+            <span>Follow Sidewave</span>
+          </div>
+        </div>
+        <div class="arrow" aria-hidden="true">↗</div>
+      </a>
+    </div>
+
+    <section class="mailingSection" aria-label="Mailing list">
+      <div class="mailingListCopy">
+        <strong>Stay in the loop.</strong>
+        <span>New music and occasional Sidewave updates.</span>
+      </div>
+
+      <form
+        class="sidewaveSignup"
+        action="https://app.kit.com/forms/9809879/subscriptions"
+        method="post"
+        target="_blank"
+      >
+        <input
+          type="email"
+          name="email_address"
+          placeholder="Email address"
+          aria-label="Email address"
+          autocomplete="email"
+          required
+        />
+        <button type="submit">Sign up</button>
+      </form>
+
+      <p class="mailingNote">We respect your privacy. Unsubscribe at any time.</p>
+    </section>
+
+    <div class="fine">© <span id="y"></span> Sidewave</div>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
