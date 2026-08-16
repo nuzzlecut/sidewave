@@ -74,12 +74,14 @@
 
     /* SIDEWAVE MAILING LIST */
 
-    .mailingList{
-      margin-top: 24px;
-      padding: 22px;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 14px;
-      background: rgba(255,255,255,.04);
+    .mailingSection{
+      margin-top: 28px;
+      padding: 24px 0 6px;
+    }
+
+    .mailingInner{
+      max-width: 760px;
+      margin: 0 auto;
     }
 
     .mailingListCopy{
@@ -88,15 +90,15 @@
 
     .mailingListCopy strong{
       display: block;
-      font-size: 16px;
-      font-weight: 600;
+      font-size: 18px;
+      font-weight: 700;
       color: #f3f5ff;
       margin-bottom: 4px;
     }
 
     .mailingListCopy span{
       font-size: 13px;
-      color: rgba(243,245,255,.65);
+      color: rgba(243,245,255,.62);
     }
 
     .kitFormWrap .formkit-form[data-uid="71f0c8a4b4"]{
@@ -157,9 +159,9 @@
     }
 
     .kitFormWrap .formkit-disclaimer{
-      margin: 9px 0 0 !important;
+      margin: 8px 0 0 !important;
       font-size: 11px !important;
-      color: rgba(243,245,255,.40) !important;
+      color: rgba(243,245,255,.36) !important;
     }
 
     @media (max-width: 600px){
@@ -955,11 +957,26 @@
                         <div class="arrow" aria-hidden="true">▶</div>
                       </a>
 
-                      <div class="mailingList">
-                        <div class="mailingListCopy">
-                          <strong>Stay in the loop.</strong>
-                          <span>New music and occasional Sidewave updates.</span>
+                      <a
+                        class="btn"
+                        href="#"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <div class="left">
+                          <img
+                            class="streamIcon"
+                            src="https://raw.githubusercontent.com/nuzzlecut/sidewave/main/images/icon_bc.svg"
+                            alt=""
+                            aria-hidden="true"
+                          />
+                          <div class="meta">
+                            <strong>Bandcamp</strong>
+                            <span>Coming soon</span>
+                          </div>
                         </div>
+                        <div class="arrow" aria-hidden="true">↗</div>
+                      </a>
 
                         <div class="kitFormWrap">
                           <script
@@ -1281,6 +1298,23 @@
           <button class="dotBtn" type="button" aria-label="Go to Dispel" aria-current="true" data-go="0"></button>
           <button class="dotBtn" type="button" aria-label="Go to Ultraviolet" aria-current="false" data-go="1"></button>
           <button class="dotBtn" type="button" aria-label="Go to Glass Giant" aria-current="false" data-go="2"></button>
+        </div>
+      </section>
+
+      <section class="mailingSection" aria-label="Mailing list">
+        <div class="mailingInner">
+          <div class="mailingListCopy">
+            <strong>Stay in the loop.</strong>
+            <span>New music and occasional Sidewave updates.</span>
+          </div>
+
+          <div class="kitFormWrap">
+            <script
+              async
+              data-uid="71f0c8a4b4"
+              src="https://sidewave.kit.com/71f0c8a4b4/index.js">
+            </script>
+          </div>
         </div>
       </section>
 
