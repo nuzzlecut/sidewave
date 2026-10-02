@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The Surface — Sidewave</title>
+
+  <meta
+    name="description"
+    content="Listen to The Surface by Sidewave."
+  />
+
+  <link
+    rel="canonical"
+    href="https://sidewaveband.com/the_surface/"
+  />
+
+  <!-- Social sharing -->
+  <meta property="og:title" content="The Surface — Sidewave" />
+  <meta property="og:description" content="Listen Now" />
+  <meta property="og:type" content="music.song" />
+  <meta
+    property="og:url"
+    content="https://sidewaveband.com/the_surface/"
+  />
+  <meta
+    property="og:image"
+    content="https://sidewaveband.com/images/the_surface.png"
+  />
+
+
+  <!-- =====================================================
+       GOOGLE ANALYTICS
+       ===================================================== -->
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-GLLCDEPB6C">
+  </script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+    gtag("config", "G-GLLCDEPB6C");
+  </script>
+
+
+  <!-- =====================================================
+       META PIXEL
+       ===================================================== -->
+
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {
+      if(f.fbq)return;
+
+      n=f.fbq=function(){
+        n.callMethod
+          ? n.callMethod.apply(n,arguments)
+          : n.queue.push(arguments)
+      };
+
+      if(!f._fbq)f._fbq=n;
+
+      n.push=n;
+      n.loaded=!0;
+      n.version='2.0';
+      n.queue=[];
+
+      t=b.createElement(e);
+      t.async=!0;
+      t.src=v;
+
+      s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s);
+
+    }(
+      window,
+      document,
+      'script',
+      'https://connect.facebook.net/en_US/fbevents.js'
+    );
+
+    fbq('init', '1777917926867198');
+    fbq('track', 'PageView');
+  </script>
+
+
+  <style>
+    :root {
+      --bg: #070809;
+      --text: rgba(255,255,255,.96);
+      --muted: rgba(255,255,255,.62);
+      --stroke: rgba(255,255,255,.13);
+      --surface: rgba(255,255,255,.055);
+      --surface-hover: rgba(255,255,255,.10);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100svh;
+
+      background:
+        radial-gradient(
+          circle at 50% 20%,
+          rgba(255,255,255,.06),
+          transparent 35%
+        ),
+        linear-gradient(
+          180deg,
+          #0d0e10 0%,
+          var(--bg) 65%
+        );
+
+      color: var(--text);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+
+    /* =====================================================
+       PAGE
+       ===================================================== */
+
+    .page {
+      width: min(100% - 36px, 440px);
+      min-height: 100svh;
+
+      margin: 0 auto;
+      padding: 30px 0 32px;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    .brand {
+      margin: 0 0 22px;
+
+      text-align: center;
+
+      font-size: 12px;
+      font-weight: 750;
+
+      letter-spacing: .16em;
+      text-transform: uppercase;
+
+      color: rgba(255,255,255,.60);
+    }
+
+
+    /* =====================================================
+       ARTWORK
+       ===================================================== */
+
+    .art {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+
+      border-radius: var(--radius);
+      overflow: hidden;
+
+      border: 1px solid rgba(255,255,255,.11);
+      background: #111;
+
+      box-shadow:
+        0 24px 70px rgba(0,0,0,.42),
+        0 1px 0 rgba(255,255,255,.06) inset;
+    }
+
+    .art img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+
+
+    /* =====================================================
+       TITLE
+       ===================================================== */
+
+    .heading {
+      text-align: center;
+      padding: 20px 0 18px;
+    }
+
+    h1 {
+      margin: 0;
+
+      font-size: clamp(25px, 6vw, 31px);
+      line-height: 1.1;
+
+      letter-spacing: -.025em;
+      font-weight: 750;
+    }
+
+    .listen-now {
+      margin: 7px 0 0;
+
+      color: var(--muted);
+
+      font-size: 14px;
+      font-weight: 600;
+
+      letter-spacing: .04em;
+    }
+
+
+    /* =====================================================
+       STREAMING SERVICES
+       ===================================================== */
+
+    .services {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .service {
+      min-height: 58px;
+
+      padding:
+        10px
+        14px
+        10px
+        16px;
+
+      display: flex;
+      align-items: center;
+      gap: 13px;
+
+      color: var(--text);
+      text-decoration: none;
+
+      background: var(--surface);
+
+      border:
+        1px solid
+        var(--stroke);
+
+      border-radius: 14px;
+
+      transition:
+        transform .14s ease,
+        background .14s ease,
+        border-color .14s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-1px);
+
+      background:
+        var(--surface-hover);
+
+      border-color:
+        rgba(255,255,255,.20);
+    }
+
+    .service:active {
+      transform: translateY(0);
+    }
+
+
+    /* ICON */
+
+    .service-icon {
+      width: 28px;
+      height: 28px;
+
+      flex: 0 0 28px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .service-icon img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+    }
+
+
+    /* SERVICE NAME */
+
+    .service-name {
+      flex: 1;
+
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+
+    /* LISTEN */
+
+    .service-action {
+      color:
+        rgba(255,255,255,.55);
+
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+
+    /* ARROW */
+
+    .arrow {
+      width: 28px;
+      height: 28px;
+
+      margin-left: 2px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      border-radius: 9px;
+
+      color:
+        rgba(255,255,255,.72);
+
+      font-size: 15px;
+    }
+
+
+    /* =====================================================
+       SMALL PHONES
+       ===================================================== */
+
+    @media (max-width: 480px) {
+
+      .page {
+        width:
+          min(100% - 28px, 440px);
+
+        padding-top: 22px;
+        padding-bottom: 24px;
+      }
+
+      .brand {
+        margin-bottom: 16px;
+      }
+
+      .heading {
+        padding: 17px 0 15px;
+      }
+
+      .service {
+        min-height: 55px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- Meta Pixel fallback for browsers with JavaScript disabled -->
+
+  <noscript>
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=1777917926867198&ev=PageView&noscript=1"
+      alt=""
+    />
+  </noscript>
+
+
+  <main class="page">
+
+
+    <!-- HEADER -->
+
+    <div class="brand">
+      Sidewave · Dispel · 10.23.26
+    </div>
+
+
+    <!-- ARTWORK -->
+
+    <div class="art">
+      <img
+        src="../images/the_surface.png"
+        alt="The Surface by Sidewave"
+      />
+    </div>
+
+
+    <!-- TITLE -->
+
+    <div class="heading">
+
+      <h1>
+        The Surface
+      </h1>
+
+      <p class="listen-now">
+        Listen Now
+      </p>
+
+    </div>
+
+
+    <!-- STREAMING SERVICES -->
+
+    <div class="services">
+
+
+      <!-- SPOTIFY -->
+
+      <a
+        class="service"
+        href="https://open.spotify.com/track/2Ooh9bA7p0Q0FcgotboVIm?si=1bbfc124090e43f0"
+        target="_blank"
+        rel="noopener"
+        data-platform="spotify"
+      >
+
+        <div class="service-icon">
+          <img
+            src="../icon_spotify.svg"
+            alt=""
+            aria-hidden="true"
+          />
+        </div>
+
+        <span class="service-name">
+          Spotify
+        </span>
+
+        <span class="service-action">
+          Listen
+        </span>
+
+        <span
+          class="arrow"
+          aria-hidden="true"
+        >
+          ↗
+        </span>
+
+      </a>
+
+
+      <!-- APPLE MUSIC -->
+
+      <a
+        class="service"
+        href="https://music.apple.com/us/album/the-surface-single/6814894342"
+        target="_blank"
+        rel="noopener"
+        data-platform="apple_music"
+      >
+
+        <div class="service-icon">
+          <img
+            src="../icon_apple.svg"
+            alt=""
+            aria-hidden="true"
+          />
+        </div>
+
+        <span class="service-name">
+          Apple Music
+        </span>
+
+        <span class="service-action">
+          Listen
+        </span>
+
+        <span
+          class="arrow"
+          aria-hidden="true"
+        >
+          ↗
+        </span>
+
+      </a>
+
+
+      <!-- BANDCAMP -->
+
+      <a
+        class="service"
+        href="https://sidewave.bandcamp.com/track/the-surface"
+        target="_blank"
+        rel="noopener"
+        data-platform="bandcamp"
+      >
+
+        <div class="service-icon">
+          <img
+            src="../icon_bc.svg"
+            alt=""
+            aria-hidden="true"
+          />
+        </div>
+
+        <span class="service-name">
+          Bandcamp
+        </span>
+
+        <span class="service-action">
+          Listen
+        </span>
+
+        <span
+          class="arrow"
+          aria-hidden="true"
+        >
+          ↗
+        </span>
+
+      </a>
+
+
+      <!-- AMAZON MUSIC -->
+
+      <a
+        class="service"
+        href="https://music.amazon.com/albums/B0HKP29T89?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_EwtWX3l65n4Pv6vKfPW3qy7k2"
+        target="_blank"
+        rel="noopener"
+        data-platform="amazon_music"
+      >
+
+        <div class="service-icon">
+          <img
+            src="../icon_amazon.svg"
+            alt=""
+            aria-hidden="true"
+          />
+        </div>
+
+        <span class="service-name">
+          Amazon Music
+        </span>
+
+        <span class="service-action">
+          Listen
+        </span>
+
+        <span
+          class="arrow"
+          aria-hidden="true"
+        >
+          ↗
+        </span>
+
+      </a>
+
+
+    </div>
+
+  </main>
+
+
+  <!-- =====================================================
+       LISTEN CLICK TRACKING
+       ===================================================== -->
+
+  <script>
+
+    document
+      .querySelectorAll(".service")
+      .forEach((link) => {
+
+        link.addEventListener("click", () => {
+
+          const platform =
+            link.dataset.platform;
+
+
+          /*
+          -------------------------
+          GOOGLE ANALYTICS
+          -------------------------
+          */
+
+          if (typeof gtag === "function") {
+
+            gtag(
+              "event",
+              "listen_click",
+              {
+                platform: platform
+              }
+            );
+
+          }
+
+
+          /*
+          -------------------------
+          META PIXEL
+          -------------------------
+          */
+
+          if (typeof fbq === "function") {
+
+            fbq(
+              "trackCustom",
+              "ListenClick",
+              {
+                platform: platform
+              }
+            );
+
+          }
+
+        });
+
+      });
+
+  </script>
+
+
+</body>
+</html>
