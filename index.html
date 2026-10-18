@@ -883,7 +883,21 @@
       border: 0;
       display: block;
     }
+/* Carousel swipe hint - hidden on desktop */
+.carouselHint{
+  display:none;
+}
 
+@media (max-width:760px){
+  .carouselHint{
+    display:block;
+    margin:0 0 10px;
+    color:var(--muted);
+    font-size:12px;
+    text-align:right;
+    letter-spacing:.02em;
+  }
+}
     /* Responsive */
     @media (max-width: 920px){
       .hero{ grid-template-columns: 340px 1fr; }
@@ -896,10 +910,15 @@
       .bio{ grid-template-columns: 1fr; }
       .portrait{ max-width: 240px; }
       .carouselTrack{
-        padding: 0 18px;
-        margin: 0 -18px;
-      }
-      .carouselSlide{ flex: 0 0 100%; }
+  padding: 0 18px;
+  margin: 0 -18px;
+  scroll-padding-inline: 18px;
+}
+
+.carouselSlide{
+  flex: 0 0 calc(100% - 48px);
+  max-width: calc(100% - 48px);
+}
       .brandLogo{
         height: 32px;
         max-width: 82vw;
@@ -922,6 +941,7 @@
     </header>
 
     <main id="main">
+      <div class="carouselHint">Swipe to explore albums <span aria-hidden="true">→</span></div>
       <section class="carousel" aria-label="Albums">
         <div class="carouselTrack" id="carouselTrack">
           <!-- Slide 1 (Dispel - playable cover opens lightbox) -->
