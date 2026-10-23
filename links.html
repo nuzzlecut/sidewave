@@ -4,18 +4,39 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Sidewave — music, links, and updates." />
+
   <!-- Favicons -->
-
   <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96">
-
   <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg">
-
   <link rel="shortcut icon" href="images/favicon/favicon.ico">
-
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
-
   <link rel="manifest" href="images/favicon/site.webmanifest">
+
   <title>Sidewave - Links</title>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GLLCDEPB6C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GLLCDEPB6C');
+  </script>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '1777917926867198');
+    fbq('track', 'PageView');
+  </script>
 
   <style>
     :root{
@@ -296,79 +317,97 @@
 
     <div class="links" aria-label="Sidewave links">
 
-  <!-- Spotify -->
-  <a class="linkCard" href="https://open.spotify.com/album/14DhCOsTrpb6guQ3REjEXV?si=XNA9SoSTQ9ekO3YuK_eVyg" target="_blank" rel="noopener">
-    <div class="left">
-      <img class="streamIcon" src="images/icon_spotify.svg" alt="" aria-hidden="true" />
-      <div class="meta">
-        <strong>Spotify</strong>
-        <span>Listen to Dispel</span>
-      </div>
-    </div>
-    <div class="arrow" aria-hidden="true">↗</div>
-  </a>
+      <!-- Spotify -->
+      <a class="linkCard"
+         data-platform="spotify"
+         href="https://open.spotify.com/album/14DhCOsTrpb6guQ3REjEXV?si=XNA9SoSTQ9ekO3YuK_eVyg"
+         target="_blank" rel="noopener">
+        <div class="left">
+          <img class="streamIcon" src="images/icon_spotify.svg" alt="" aria-hidden="true" />
+          <div class="meta">
+            <strong>Spotify</strong>
+            <span>Listen to Dispel</span>
+          </div>
+        </div>
+        <div class="arrow" aria-hidden="true">↗</div>
+      </a>
 
-  <!-- Apple Music -->
-  <a class="linkCard" href="https://music.apple.com/us/album/dispel/6817061036" target="_blank" rel="noopener">
-    <div class="left">
-      <img class="streamIcon" src="images/icon_apple.svg" alt="" aria-hidden="true" />
-      <div class="meta">
-        <strong>Apple Music</strong>
-        <span>Listen to Dispel</span>
-      </div>
-    </div>
-    <div class="arrow" aria-hidden="true">↗</div>
-  </a>
+      <!-- Apple Music -->
+      <a class="linkCard"
+         data-platform="apple_music"
+         href="https://music.apple.com/us/album/dispel/6817061036"
+         target="_blank" rel="noopener">
+        <div class="left">
+          <img class="streamIcon" src="images/icon_apple.svg" alt="" aria-hidden="true" />
+          <div class="meta">
+            <strong>Apple Music</strong>
+            <span>Listen to Dispel</span>
+          </div>
+        </div>
+        <div class="arrow" aria-hidden="true">↗</div>
+      </a>
 
-  <!-- Bandcamp -->
-  <a class="linkCard" href="https://sidewave.bandcamp.com/album/dispel" target="_blank" rel="noopener">
-    <div class="left">
-      <img class="streamIcon" src="images/icon_bc.svg" alt="" aria-hidden="true" />
-      <div class="meta">
-        <strong>Bandcamp</strong>
-        <span>Listen and support directly</span>
-      </div>
-    </div>
-    <div class="arrow" aria-hidden="true">↗</div>
-  </a>
+      <!-- Bandcamp -->
+      <a class="linkCard"
+         data-platform="bandcamp"
+         href="https://sidewave.bandcamp.com/album/dispel"
+         target="_blank" rel="noopener">
+        <div class="left">
+          <img class="streamIcon" src="images/icon_bc.svg" alt="" aria-hidden="true" />
+          <div class="meta">
+            <strong>Bandcamp</strong>
+            <span>Listen and support directly</span>
+          </div>
+        </div>
+        <div class="arrow" aria-hidden="true">↗</div>
+      </a>
 
-  <!-- YouTube Music -->
-  <a class="linkCard" href="https://music.youtube.com/playlist?list=OLAK5uy_nr6TP880sZ3Yip6KAK2YWA5UcII748FyI&amp;si=45El8e1sjzZCiMGI" target="_blank" rel="noopener">
-    <div class="left">
-      <img class="streamIcon" src="images/icon_yt.svg" alt="" aria-hidden="true" />
-      <div class="meta">
-        <strong>YouTube Music</strong>
-        <span>Listen to Dispel</span>
-      </div>
-    </div>
-    <div class="arrow" aria-hidden="true">↗</div>
-  </a>
+      <!-- YouTube Music -->
+      <a class="linkCard"
+         data-platform="youtube_music"
+         href="https://music.youtube.com/playlist?list=OLAK5uy_nr6TP880sZ3Yip6KAK2YWA5UcII748FyI&amp;si=45El8e1sjzZCiMGI"
+         target="_blank" rel="noopener">
+        <div class="left">
+          <img class="streamIcon" src="images/icon_yt.svg" alt="" aria-hidden="true" />
+          <div class="meta">
+            <strong>YouTube Music</strong>
+            <span>Listen to Dispel</span>
+          </div>
+        </div>
+        <div class="arrow" aria-hidden="true">↗</div>
+      </a>
 
-  <!-- Instagram -->
-  <a class="linkCard" href="https://www.instagram.com/sidewaveband/" target="_blank" rel="noopener">
-    <div class="left">
-      <div class="textIcon" aria-hidden="true">◎</div>
-      <div class="meta">
-        <strong>Instagram</strong>
-        <span>Follow Sidewave</span>
-      </div>
-    </div>
-    <div class="arrow" aria-hidden="true">↗</div>
-  </a>
+      <!-- Instagram -->
+      <a class="linkCard"
+         data-platform="instagram"
+         href="https://www.instagram.com/sidewaveband/"
+         target="_blank" rel="noopener">
+        <div class="left">
+          <div class="textIcon" aria-hidden="true">◎</div>
+          <div class="meta">
+            <strong>Instagram</strong>
+            <span>Follow Sidewave</span>
+          </div>
+        </div>
+        <div class="arrow" aria-hidden="true">↗</div>
+      </a>
 
-  <!-- Website -->
-  <a class="linkCard" href="/" target="_self">
-    <div class="left">
-      <div class="textIcon" aria-hidden="true">↗</div>
-      <div class="meta">
-        <strong>Official Website</strong>
-        <span>sidewaveband.com</span>
-      </div>
-    </div>
-    <div class="arrow" aria-hidden="true">→</div>
-  </a>
+      <!-- Website -->
+      <a class="linkCard"
+         data-platform="website"
+         href="/"
+         target="_self">
+        <div class="left">
+          <div class="textIcon" aria-hidden="true">↗</div>
+          <div class="meta">
+            <strong>Official Website</strong>
+            <span>sidewaveband.com</span>
+          </div>
+        </div>
+        <div class="arrow" aria-hidden="true">→</div>
+      </a>
 
-</div>
+    </div>
 
     <section class="mailingSection" aria-label="Mailing list">
       <div class="mailingListCopy">
@@ -400,7 +439,54 @@
   </main>
 
   <script>
+    // Copyright year
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Sidewave link tracking
+    const release = "dispel";
+    const sourcePage = "links";
+
+    const streamingPlatforms = [
+      "spotify",
+      "apple_music",
+      "bandcamp",
+      "youtube_music"
+    ];
+
+    document.querySelectorAll(".linkCard[data-platform]").forEach(link => {
+      link.addEventListener("click", () => {
+        const platform = link.dataset.platform;
+        const isStreaming = streamingPlatforms.includes(platform);
+
+        const eventName = isStreaming
+          ? "listen_click"
+          : platform === "instagram"
+            ? "social_click"
+            : "website_click";
+
+        const metaEventName = isStreaming
+          ? "ListenClick"
+          : platform === "instagram"
+            ? "SocialClick"
+            : "WebsiteClick";
+
+        const parameters = {
+          platform: platform,
+          release: release,
+          source_page: sourcePage
+        };
+
+        // Google Analytics 4
+        if (typeof gtag === "function") {
+          gtag("event", eventName, parameters);
+        }
+
+        // Meta Pixel
+        if (typeof fbq === "function") {
+          fbq("trackCustom", metaEventName, parameters);
+        }
+      });
+    });
   </script>
 </body>
 </html>
