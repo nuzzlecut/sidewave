@@ -1502,32 +1502,33 @@ and the desire to reach beyond the boundaries of ordinary existence. </p>
     </main>
   </div>
 
-  <!-- Lightbox Modal (The Surface promo reel) -->
-  <div class="modal" id="surfaceModal" role="dialog" aria-modal="true" aria-labelledby="surfaceModalTitle" aria-hidden="true">
-    <div class="modalBackdrop" data-close="1"></div>
-    <div class="modalPanel">
-      <div class="modalCard">
-        <div class="modalTop">
-          <div class="modalTitle">
-            <strong id="surfaceModalTitle">The Surface</strong>
-            <span>Promo reel · 9:16</span>
-          </div>
-          <button class="closeBtn" type="button" id="closeSurfaceModal" aria-label="Close">✕</button>
+
+<!-- Lightbox Modal (Big Whisper promo reel) -->
+<div class="modal" id="bigWhisperModal" role="dialog" aria-modal="true" aria-labelledby="bigWhisperModalTitle" aria-hidden="true">
+  <div class="modalBackdrop" data-close="1"></div>
+  <div class="modalPanel">
+    <div class="modalCard">
+      <div class="modalTop">
+        <div class="modalTitle">
+          <strong id="bigWhisperModalTitle">Big Whisper</strong>
+          <span>Promo reel · 9:16</span>
         </div>
-        <div class="modalBody">
-          <div class="modalVideo">
-            <video
-              id="surfaceVideo"
-              src="https://raw.githubusercontent.com/nuzzlecut/sidewave/main/video/bw_promo.mp4"
-              playsinline
-              controls
-              preload="metadata"
-            ></video>
-          </div>
+        <button class="closeBtn" type="button" id="closeBigWhisperModal" aria-label="Close">✕</button>
+      </div>
+      <div class="modalBody">
+        <div class="modalVideo">
+          <video
+            id="bigWhisperVideo"
+            src="https://raw.githubusercontent.com/nuzzlecut/sidewave/main/video/bw_promo.mp4"
+            playsinline
+            controls
+            preload="metadata"
+          ></video>
         </div>
       </div>
     </div>
   </div>
+</div>
 
   <!-- Lightbox Modal (Pines music video) -->
   <div class="modal" id="pinesModal" role="dialog" aria-modal="true" aria-labelledby="pinesModalTitle" aria-hidden="true">
@@ -1615,9 +1616,9 @@ and the desire to reach beyond the boundaries of ordinary existence. </p>
       }, 0);
     });
 
-    function stopSurfaceVideo() {
+    function stopbigWhisperVideo() {
       try {
-        const v = document.getElementById("surfaceVideo");
+        const v = document.getElementById("bigWhisperVideo");
         if (v) v.pause();
       } catch (_) {}
     }
@@ -1633,7 +1634,7 @@ and the desire to reach beyond the boundaries of ordinary existence. </p>
 
     function stopAllMedia(opts = {}) {
       const exceptBandcamp = opts.exceptBandcamp || null;
-      stopSurfaceVideo();
+      stopbigWhisperVideo();
       stopPinesYouTube();
       stopBandcampAll(exceptBandcamp);
     }
@@ -1698,64 +1699,64 @@ and the desire to reach beyond the boundaries of ordinary existence. </p>
        =========================== */
     const openReel = document.getElementById("openSurfaceReel");
     const openSurfaceReelButton = document.getElementById("openSurfaceReelButton");
-    const surfaceModal = document.getElementById("surfaceModal");
-    const closeSurface = document.getElementById("closeSurfaceModal");
-    const surfaceVideo = document.getElementById("surfaceVideo");
+    const bigWhisperModal = document.getElementById("bigWhisperModal");
+    const closeSurface = document.getElementById("closebigWhisperModal");
+    const bigWhisperVideo = document.getElementById("bigWhisperVideo");
     let lastFocus = null;
 
-    function openSurfaceModal() {
+    function openbigWhisperModal() {
       stopAllMedia();
       lastFocus = document.activeElement;
 
-      surfaceModal.classList.add("isOpen");
-      surfaceModal.setAttribute("aria-hidden", "false");
+      bigWhisperModal.classList.add("isOpen");
+      bigWhisperModal.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
 
       try {
-        surfaceVideo.currentTime = 0;
-        const p = surfaceVideo.play();
+        bigWhisperVideo.currentTime = 0;
+        const p = bigWhisperVideo.play();
         if (p && typeof p.catch === "function") p.catch(() => {});
       } catch (_) {}
 
       closeSurface.focus();
     }
 
-    function closeSurfaceModal() {
-      surfaceModal.classList.remove("isOpen");
-      surfaceModal.setAttribute("aria-hidden", "true");
+    function closebigWhisperModal() {
+      bigWhisperModal.classList.remove("isOpen");
+      bigWhisperModal.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
 
-      try { surfaceVideo.pause(); } catch (_) {}
+      try { bigWhisperVideo.pause(); } catch (_) {}
       if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
     }
 
     if (openReel) {
       openReel.addEventListener("click", (e) => {
         e.preventDefault();
-        openSurfaceModal();
+        openbigWhisperModal();
       });
     }
     openSurfaceReelButton?.addEventListener("click", (event) => {
     event.preventDefault();
-    openSurfaceModal();
+    openbigWhisperModal();
   });
-    closeSurface.addEventListener("click", closeSurfaceModal);
-    surfaceModal.addEventListener("click", (e) => {
+    closeSurface.addEventListener("click", closebigWhisperModal);
+    bigWhisperModal.addEventListener("click", (e) => {
       const t = e.target;
-      if (t && t.dataset && t.dataset.close === "1") closeSurfaceModal();
+      if (t && t.dataset && t.dataset.close === "1") closebigWhisperModal();
     });
 
     document.addEventListener("keydown", (e) => {
-      if (!surfaceModal.classList.contains("isOpen")) return;
+      if (!bigWhisperModal.classList.contains("isOpen")) return;
 
       if (e.key === "Escape") {
         e.preventDefault();
-        closeSurfaceModal();
+        closebigWhisperModal();
         return;
       }
 
       if (e.key === "Tab") {
-        const focusables = surfaceModal.querySelectorAll('button,[href],video,[tabindex]:not([tabindex="-1"])');
+        const focusables = bigWhisperModal.querySelectorAll('button,[href],video,[tabindex]:not([tabindex="-1"])');
         if (!focusables.length) return;
 
         const first = focusables[0];
